@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+#🚀 Serverless Cloud Dictionary
+Serverless Dictionary API with AWS Components
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##Short Description
+A fully cloud-native dictionary lookup service built on AWS. It exposes a REST API for querying definitions of terms, using a serverless backend (Lambda + API Gateway) and a DynamoDB table for storage — enabling efficient, scalable and cost-effective dictionary lookups.
 
-## Available Scripts
+##🛠️ AWS Services Used
+Amazon API Gateway,
+AWS Lambda,
+Amazon DynamoDB,
+Amazon S3 (optional for static assets),
+AWS IAM,
 
-In the project directory, you can run:
+##🧰 Technical Tools
+Python (or Node.js) for Lambda functions,
+Boto3 (or AWS SDK) for AWS service integration,
+Serverless Framework or AWS SAM (optional)
 
-### `npm start`
+##🧠 Skills Demonstrated
+Serverless architecture design,
+REST API implementation with AWS,
+DynamoDB design & usage,
+Cloud-native deployment and scalability
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##📋 Steps Performed
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+###Create DynamoDB Table:
+Created a DynamoDB table named CloudDictionary with term as the partition key.
+Populated the table with dictionary entries (terms and their definitions) for querying.
 
-### `npm test`
+###Deploy Lambda Function
+Created an AWS Lambda function (e.g., getDefinitionFunction) using Python or Node.js runtime.
+Configured the Lambda to read definitions from the DynamoDB table based on the requested term.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+###Configure API Gateway
+Created a REST API in API Gateway with a GET endpoint (for example /define/{term}).
+Connected the endpoint to the Lambda function as the backend integration.
+Set up request/response mapping so users can submit a term and receive its definition.
 
-### `npm run build`
+###Set IAM Permissions and Roles
+Created an IAM role for the Lambda with permissions to read from the DynamoDB table.
+Configured necessary execution roles for API Gateway and Lambda to operate securely.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+###Deploy and Test the API
+Deployed the API Gateway to a stage (e.g., prod).
+Tested the endpoint with sample terms to verify correct definitions are returned.
+Verified edge cases (term not found, invalid input) to ensure graceful error handling.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##✅ Final Result
+Serverless Dictionary Lookup Service
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##💼 Business Implication
+This project illustrates how to build a scalable, cost-effective dictionary service using AWS’s serverless stack. Organizations can provide real-time definition lookup functionality without managing servers, and the architecture scales automatically with usage — making it ideal for education platforms, content services, or API-first products requiring minimal infrastructure overhead.
